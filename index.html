@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResumeForge - Professional Resume Builder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="particles"></div>
+    <div class="container">
+      <header class="header">
+        <h1 class="logo">ResumeForge</h1>
+        <p class="tagline">Craft Your Professional Identity</p>
+      </header>
+
+      <form id="resumeForm" action="/generate-resume" method="POST">
+        <div class="form-group">
+          <div class="input-group">
+            <label>Full Name:</label>
+            <input type="text" name="name" required placeholder="John Doe" />
+            <i class="fas fa-user icon"></i>
+          </div>
+          <div class="input-group">
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="john@example.com" />
+            <i class="fas fa-envelope icon"></i>
+          </div>
+          <div class="input-group file-upload">
+            <label>Profile Picture:</label>
+            <input
+              type="file"
+              name="profilePic"
+              id="profilePic"
+              accept="image/*"
+              required />
+            <label for="profilePic" class="upload-btn">
+              <i class="fas fa-cloud-upload-alt"></i> Choose File
+            </label>
+          </div>
+          <div class="input-group">
+            <label>Skills:</label>
+            <textarea
+              name="skills"
+              required
+              placeholder="Enter skills separated by commas"></textarea>
+            <i class="fas fa-code icon"></i>
+          </div>
+          <div class="input-group">
+            <label>Phone:</label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              required
+              placeholder="+1 234 567 890" />
+            <i class="fas fa-phone icon"></i>
+          </div>
+
+          <div class="input-group">
+            <label>Experience:</label>
+            <textarea
+              id="experience"
+              name="experience"
+              required
+              placeholder="5+ years of web development..."></textarea>
+            <i class="fas fa-briefcase icon"></i>
+          </div>
+        </div>
+        <button type="submit" class="generate-btn">
+          <span class="btn-text">Forge My Resume</span>
+          <div class="loading-spinner hidden"></div>
+        </button>
+      </form>
+
+      <div class="features">
+        <div class="feature-card">
+          <i class="fas fa-magic"></i>
+          <h3>Smart Templates</h3>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>ATS Friendly</h3>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Mobile Ready</h3>
+        </div>
+      </div>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

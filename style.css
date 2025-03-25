@@ -1,0 +1,283 @@
+/* Base Styles */
+:root {
+    --primary-color: #6C5CE7;     /* Purple */
+    --secondary-color: #00B894;   /* Teal */
+    --accent-color: #FF7675;      /* Coral */
+    --text-color: #2D3436;        /* Dark Gray */
+    --bg-color: #fdcb6e;          /* Yellow */
+    --success-color: #00B894;     /* Teal */
+    --error-color: #D63031;       /* Red */
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(
+      45deg,
+      #ffeaa7,  /* Light Yellow */
+      #81ECEC,  /* Light Teal */
+      #FDA7DF,  /* Pink */
+      #D980FA   /* Purple */
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Container (UNCHANGED) */
+  .container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .tagline {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Form Styles (UNCHANGED LAYOUT) */
+  #resumeForm {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .input-group input:focus,
+  .input-group textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.25);
+    outline: none;
+  }
+  
+  .icon {
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    color: #666;
+  }
+  
+  /* File Upload (UNCHANGED) */
+  .file-upload input[type="file"] {
+    display: none;
+  }
+  
+  .upload-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .upload-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+  
+  /* Button Styles (COLOR CHANGES ONLY) */
+  .generate-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .generate-btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 5px 15px rgba(255, 118, 117, 0.3);
+  }
+  
+  .loading-spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  @keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Features Section (COLOR UPDATE) */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive Design (UNCHANGED) */
+  @media (max-width: 768px) {
+    .container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  
+    #resumeForm {
+      padding: 1rem;
+    }
+  
+    .logo {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .input-group {
+      margin-bottom: 1rem;
+    }
+  
+    .generate-btn {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Browser Compatibility Fixes (UNCHANGED) */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+    -webkit-text-fill-color: var(--text-color);
+  }
+  
+  /* Print Styles (UNCHANGED) */
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    #resumeForm {
+      visibility: visible;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  
+  /* New Colorful Effects */
+  .container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 25%,
+      rgba(255, 118, 117, 0.1) 45%,
+      transparent 70%,
+      rgba(108, 92, 231, 0.1) 90%
+    );
+    animation: shine 8s infinite linear;
+    z-index: -1;
+  }
+  
+  @keyframes shine {
+    100% {
+      transform: translate(50%, 50%);
+    }
+  }
